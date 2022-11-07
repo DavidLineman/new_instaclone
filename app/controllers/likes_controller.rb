@@ -2,6 +2,7 @@ class LikesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
+    @comment = @post.comment(params[:comment_id])
     current_user.like!(@post)
   end
 
